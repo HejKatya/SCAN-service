@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+@font-face {
+    font-family: 'Ferry';
+    src: url('fonts/Ferry-Black.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+h1, h2 {
+    font-family: 'Ferry', sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
