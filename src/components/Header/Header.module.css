@@ -1,3 +1,122 @@
 .header {
     height: 93px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 141px;
+    height: 100%;
+}
+
+.nav_list {
+    display: flex;
+}
+
+.nav_item:not(:last-child) {
+    margin-right: 49px;
+}
+
+.nav_link, 
+.link_disabled, 
+.btn {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+}
+
+.nav_link {
+    color: #000;
+}
+
+.nav_link:hover {
+    color: #000000b2;
+}
+
+.link_disabled {
+    padding-right: 18px;
+    margin-right: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-right: 2px solid rgba(2, 148, 145, 0.6);
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.link_disabled:hover, .user_btn:hover {
+    color: #000;
+}
+
+.btn {
+    font-weight: 500;
+    background-color: #7CE3E1;
+    border-radius: 5px;
+    padding: 4px 10px 5px 12px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #a9e3e2;
+}
+
+.signed {
+    display: flex;
+}
+
+.info {
+    margin-right: 128px;
+    text-align: justify;
+    display: flex;
+    padding: 12px 8px 15px 10px;
+    background-color: rgba(217, 217, 217, 0.3);
+    border-radius: 5px;
+}
+
+.info_text {
+    margin-top: 2px;
+    text-align: right;
+    margin-right: 9px;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgb(0, 0, 0, 0.4);
+}  
+
+.info_text:first-child {
+    margin-bottom: 7px;
+}
+
+.info_number {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.info_number:last-child {
+    margin-top: 2px;
+    color: #8AC540;
+}
+
+.user {
+    display: flex;
+    margin-top: 15px;
+    text-align: right;
+}
+
+.user_name {
+    font-size: 14px;
+    color: rgb(0, 0, 0, 0.7);
+}
+
+.user_left {
+    margin-right: 5px;
+}
+
+.user_btn {
+    background-color: transparent;
+    font-size: 10px;
+    color: rgb(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.userpic {
+    height: 37px;
 }

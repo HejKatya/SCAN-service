@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 @font-face {
     font-family: 'Ferry';
@@ -17,8 +17,20 @@ body {
     padding-right: 60px;
 }
 
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 h1, h2 {
     font-family: 'Ferry', sans-serif;
+}
+
+button {
+    border: none;
 }
 
 *:focus {
