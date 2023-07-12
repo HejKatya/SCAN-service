@@ -19,19 +19,19 @@ const AppHeader = () => {
             <nav className={styles.nav}>
                 <ul className={styles.nav_list}>
                     <li className={styles.nav_item}>
-                        <a className={styles.nav_link} href="">Главная</a>
+                        <a className={styles.nav_link} href=" ">Главная</a>
                     </li>
                     <li className={styles.nav_item}>
-                        <a className={styles.nav_link} href="">Тарифы</a>
+                        <a className={styles.nav_link} href=" ">Тарифы</a>
                     </li>
                     <li className={styles.nav_item}>
-                        <a className={styles.nav_link} href="">FAQ</a>
+                        <a className={styles.nav_link} href=" ">FAQ</a>
                     </li>
                 </ul>
             </nav>
             {!signedIn ? 
             <div className={styles.not_signed}>
-                <a className={styles.link_disabled} href="">Зарегистрироваться</a>
+                <a className={styles.link_disabled} href=" ">Зарегистрироваться</a>
                 <button onClick={signIn} className={styles.btn}>Войти</button>
             </div>   
             : 
@@ -51,7 +51,7 @@ const AppHeader = () => {
                        <h6 className={styles.user_name}>Катя С.</h6>  
                        <button onClick={signOut} className={styles.user_btn}>Выйти</button>
                     </div>
-                    <img className={styles.userpic} src="/imgs/header/mock-userpic.svg" alt="a picture of the user"/>
+                    <img className={styles.userpic} src="/imgs/header/mock-userpic.svg" alt="the user"/>
                 </div>
             </div>    
             }

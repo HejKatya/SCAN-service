@@ -1,0 +1,233 @@
+/* hero section */
+
+.hero_section {
+    margin-top: 69px;
+    height: 620px;
+    background-size: 629px 593px;
+    background-position: right -45px;
+}
+
+.heading {
+    font-size: 60px;
+}
+
+.paragraph {
+    margin-top: 20px;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+}
+
+.btn {
+    font-size: 22px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #5970FF;
+    font-weight: 500;
+}
+
+.hero_btn {
+    margin-top: 70px;
+    padding: 14px 64px 18px 63px;
+}
+
+/* slider section */
+
+.slider_section {
+    margin-top: 109px;
+    height: 995px;
+    background-position: bottom;
+}
+
+.sub_heading {
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 0.45px;
+}
+
+.slider {
+    height: fit-content;
+    position: relative;
+}
+
+.left_arrow, 
+.right_arrow {
+    width: 39px;
+    height: 39px;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+.left_arrow {
+    left: -5px;
+}
+
+.right_arrow {
+    right: -14px;
+}
+
+.slider_list {
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 26px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-auto-columns: calc(100% / 3); */
+    gap: 30px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.slider_item {
+    width: 400px;
+    height: 225px;
+    padding-top: 113px;
+    padding-left: 20px;
+    font-size: 18px;
+    letter-spacing: 0.18px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+    background-size: 65px 79px;
+    background-position: 19px 22px;
+}
+
+.slider_item:nth-child(2) {
+    padding-right: 67px;
+    background-position: 20px 22px;
+}
+
+.slider_item:nth-child(3) {
+    padding-right: 21px;
+    background-position: 23px 22px;
+}
+
+/* rates */
+
+.rates_section {
+    margin-top: 107px;
+}
+
+.rates_heading {
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 0.45px;
+}
+
+.rates_list {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rates_item {
+    width: 415px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+}
+
+.rates_item_header {
+    position: relative;
+    height: 132px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.rates_background_img {
+    position: absolute;
+    background-size: 100%;
+    top: 0;
+    right: 0;
+}
+
+.rates_item_heading {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-bottom: 10px;
+}
+
+.rates_item_text {
+    font-size: 18px;
+    letter-spacing: 0.18px;
+}
+
+.rates_main {
+    padding: 33px 0px 24px 30px;
+    position: relative;
+}
+
+.rates_current {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    padding: 3px 13px 4px 13px;
+    border-radius: 10px;
+    background-color: #3BA5E0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+}
+
+.rates_current_price, 
+.rates_prev_price {
+    display: inline-block;
+}
+
+.rates_current_price {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-right: 19px;
+}
+
+.rates_prev_price {
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, .5);
+}
+
+.rates_price_info {
+    font-size: 18px;
+    letter-spacing: 0.18px;
+    margin-top: 13px;
+}
+
+.rates_list_info_heading {
+    margin-top: 59px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.rates_list_info_item {
+    margin-bottom: 5px;
+    padding-left: 28px;
+    font-size: 18px;
+    letter-spacing: 0.018px;
+}
+
+.rates_btn {
+    margin-top: 50px;
+    margin-right: 30px;
+    padding-top: 18px;
+    padding-bottom: 17px;
+    width: calc(100% - 30px);
+    border-radius: 5px;
+    background-color: #5970FF;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+}
+
+.rates_btn:hover,
+.hero_btn:hover {
+    background-color: #3750ee;
+}
