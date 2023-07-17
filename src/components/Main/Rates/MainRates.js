@@ -1,7 +1,7 @@
 import styles from '../Main.module.css';
 import React from 'react';
 import { useContext } from 'react';
-import { Context } from '../../../App';
+import { MyContext } from '../../../App';
 
 const ratesInfo = [
     {
@@ -52,7 +52,7 @@ const ratesInfo = [
 ]
 
 const MainRates = () => {
-    const [signedIn, setSignedIn] = useContext(Context)
+    const [signedIn, setSignedIn] = useContext(MyContext)
 
   return (
     <section className={styles.rates_section}>

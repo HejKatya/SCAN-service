@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
-import { Context } from "../../App";
-import styles from './Header.module.css'
+import { Link } from "react-router-dom";
+import { MyContext } from "../../App";
+import styles from './Header.module.css';
 
 const AppHeader = () => {
-    const [signedIn, setSignedIn] = useContext(Context)
-
-    const signIn = () => {
-
-    }
+    const [signedIn, setSignedIn] = useContext(MyContext);
 
     const signOut = () => {
         setSignedIn(false)
@@ -19,7 +16,7 @@ const AppHeader = () => {
             <nav className={styles.nav}>
                 <ul className={styles.nav_list}>
                     <li className={styles.nav_item}>
-                        <a className={styles.nav_link} href=" ">Главная</a>
+                        <Link className={styles.nav_link} to={'/'}>Главная</Link>
                     </li>
                     <li className={styles.nav_item}>
                         <a className={styles.nav_link} href=" ">Тарифы</a>
@@ -32,7 +29,7 @@ const AppHeader = () => {
             {!signedIn ? 
             <div className={styles.not_signed}>
                 <a className={styles.link_disabled} href=" ">Зарегистрироваться</a>
-                <button onClick={signIn} className={styles.btn}>Войти</button>
+                <Link className={styles.btn} to="/authorization">Войти</Link>
             </div>   
             : 
             <div className={styles.signed}>

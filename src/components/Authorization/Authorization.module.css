@@ -1,0 +1,133 @@
+.main {
+    margin-bottom: 80px;
+    padding-top: 69px;
+    display: flex;
+    justify-content: space-between;
+    background-position: 112px bottom;
+    background-size: 321.764px 342.035px;
+    position: relative;
+}
+
+.lock {
+    position: absolute;
+    width: 75.219px;
+    height: 92.065px;
+    top: 14px;
+    right: 485.78px;
+}
+
+.heading {
+    display: inline-block;
+    width: 800px;
+    font-size: 40px;
+    letter-spacing: 0.8px;
+}
+
+.form {
+    margin-right: 81px;
+    padding: 25px 0px 39px 25px;
+    width: 429px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.link_active,
+.link_inactive {
+    display: inline-block;
+    margin-bottom: 40px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+    border-bottom: 2px solid;
+}  
+
+.link_active {
+    margin-right: 15px;
+    padding-left: 51px;
+    padding-right: 51px;
+    color: #029491;
+}
+
+.link_inactive {
+    padding-left: 21.5px;
+    padding-right: 21.5px;
+    color: #C7C7C7;
+}
+
+.link_inactive:hover {
+    color: #52a6a58c;
+}
+
+.input, 
+.label {
+    display: block;
+}
+
+.label {
+   margin-bottom: 15px; 
+   color: #949494;
+   font-size: 16px;
+   letter-spacing: 0.32px;
+}
+
+.input {
+    margin-bottom: 20px;
+    padding-left: 19px;
+    width: calc(100% - 25px);
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    font-size: 16px;
+    letter-spacing: 0.16px;
+}
+
+.btn {
+    margin-top: 30px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 5px;
+    width: calc(100% - 25px);
+    display: block;
+    background-color: #5970FF;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.44px;
+}
+
+.btn:disabled {
+    background-color: #596fff85;
+    cursor: auto;
+}
+
+.link_password {
+    margin-top: 15px;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.28px;
+    text-decoration: underline;
+    color: #5970FF;
+}
+
+.link_password:hover {
+    color: #3a54fe98;
+}
+
+.text {
+    color: #949494;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+}
+
+.site_img {
+    width: 96px;
+    height: 31px;
+    margin-right: 10px;
+}
+
+.site_img:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+}

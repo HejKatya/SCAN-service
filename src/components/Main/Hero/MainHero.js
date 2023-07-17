@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { Context } from "../../../App";
+import { MyContext } from "../../../App";
 import styles from '../Main.module.css'
 
 const MainHero = () => {
-    const [signedIn, setSignedIn] = useContext(Context)
+    const [signedIn, setSignedIn] = useContext(MyContext)
 
     return (
         <section className={styles.hero_section} style={{
