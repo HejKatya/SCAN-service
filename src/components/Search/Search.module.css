@@ -47,21 +47,57 @@
 
 .form {
     margin-top: 47px;
-    padding: 29px 0px 32px 44px;
+    padding: 21px 0px 32px 44px;
     width: 872px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
-.star {
+.asterisk {
     font-size: 25px;
 }
 
 .label, 
 .input {
     display: block;
+}
+
+.itn_error,
+.date_error,
+.amount_error {
+    color: #FF5959;
+    font-size: 14px;
+    letter-spacing: 0.14px;
+    position: absolute;   
+}
+
+.itn_error {
+    top: 130px;
+    left: 63px;
+}
+
+.date_error {
+    top: 515px;
+    left: 140px;
+}
+
+.amount_error {
+    top: 368px;
+    left: 98px;
+}
+
+.input_itn_invalid:focus,
+.input_itn_invalid:not(:focus),
+.input_amount_invalid:focus,
+.input_amount_invalid:not(:focus),
+.input_date_invalid:not(:focus),
+.input_date_invalid:focus {
+    border: 1px solid #FF5959;
+    box-shadow: 0px 0px 20px 0px rgba(255, 89, 89, 0.20);
+    color: #FF5959;
 }
 
 .label,
@@ -71,7 +107,8 @@
     margin-bottom: 20px;
 }
 
-.input, .select {
+.input, 
+.select {
     margin-bottom: 30px;
     padding: 13px 22px;
     width: 242px;
@@ -91,6 +128,7 @@
 .input::placeholder, 
 .input_date::placeholder {
     color: rgba(148, 148, 148, 0.4);
+    text-align: center;
 }
 
 .label_date {
@@ -111,9 +149,12 @@
     background-position: 207px center;
 }
 
+/* checkbox styles */
+
 .form_right {
     width: 410px;
 }
+
 
 .check_label {
     display: inline-block;
@@ -161,6 +202,8 @@
     display: none;
 }
 
+/* btn and bottom text */
+
 .btn {
     margin-top: 145px;
     padding-top: 16px;
@@ -187,4 +230,127 @@
 
 .bottom_text sup {
     font-size: 14px;
+}
+
+@media screen and (max-width: 1390px) {
+    .characters {
+        width: 359.573px;
+        height: 403.279px;
+    }
+}
+
+@media screen and (max-width: 1295px) {
+    .characters {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .document {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .folders {
+        display: none;
+    }
+
+    .document {
+        display: block;
+        width: 58.242px;
+        height: 71.118px;
+        top: 97px;
+        right: 0;
+    }
+
+    .characters {
+        display: block;
+        right: -25px;
+        bottom: -25px;
+    }
+
+    .main {
+        margin-top: 29px;
+        margin-bottom: 25px;
+        height: 1370px;
+    }
+
+    .heading {
+        margin-bottom: 19px;
+        font-size: 28px;
+        letter-spacing: 0.28px;
+        width: 361px;
+    }
+
+    .sub_text {
+        font-size: 18px;
+        width: 297px;
+    }
+
+    .form {
+        margin-top: 21px;
+        margin-left: -14px;
+        margin-right: -26px;
+        margin-bottom: 25px;
+        padding: 24px 26px 37px 14px;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% + 38px);
+    }
+
+    .label {
+        letter-spacing: 0.36px;
+    }
+
+    .label_date {
+        margin-top: 30px;
+    }
+
+    .input, 
+    .select {
+        width: 100%;
+        letter-spacing: 0.28px;
+    }
+
+    .select {
+        background-position: 301px center;
+    }
+
+    .input_date {
+        background-position: 300px center;
+    }
+
+    .form_right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .check_container {
+        display: none;
+    }
+
+    .btn {
+        margin-top: 10px;
+        width: 335px;
+    }
+
+    .bottom_text {
+        letter-spacing: 0.28px;
+    }
+
+    .itn_error {
+        top: 127px;
+        left: 80px;
+    }
+    
+    .amount_error {
+        top: 370px;
+        left: 114px;
+    }
+
+    .date_error {
+        top: 575px;
+        left: 80px;
+    }
 }

@@ -7,18 +7,21 @@
 .hero_section {
     margin-top: 69px;
     height: 620px;
-    background-size: 629px 593px;
+    position: relative;
     background-position: right -45px;
 }
 
 .heading {
     font-size: 60px;
+    z-index: 1;
 }
 
 .paragraph {
+    width: 534px;
     margin-top: 20px;
     font-size: 20px;
     letter-spacing: 0.2px;
+    z-index: 1;
 }
 
 .btn {
@@ -27,6 +30,11 @@
     color: #fff;
     background-color: #5970FF;
     font-weight: 500;
+    z-index: 1;
+}
+
+.btn_link {
+    color: #fff;
 }
 
 .hero_btn {
@@ -34,11 +42,20 @@
     padding: 14px 64px 18px 63px;
 }
 
+.hero_background {
+    width: 629px;
+    height: 593px;
+    background-size:  100%;
+    position: absolute;
+    top: -45px;
+    right: 0;
+    z-index: -1;
+}
+
 /* slider section */
 
 .slider_section {
     margin-top: 109px;
-    height: 995px;
     background-position: bottom;
 }
 
@@ -49,12 +66,35 @@
 }
 
 .slider {
-    height: fit-content;
     position: relative;
+}
+
+.slider_list {
+    position: unset;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.slider_item {
+    min-height: 225px;
+    padding-top: 113px;
+    padding-left: 20px;
+    margin-right: 30px;
+    font-size: 18px;
+    letter-spacing: 0.18px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+    background-size: 65px 79px;
+    background-position: 19px 22px;
+}
+
+.slider_item:first-child {
+    margin-left: 20px;
 }
 
 .left_arrow, 
 .right_arrow {
+    background-color: transparent;
     width: 39px;
     height: 39px;
     background-size: 100%;
@@ -64,47 +104,20 @@
 }
 
 .left_arrow {
-    left: -5px;
+    left: -.5%;
 }
 
 .right_arrow {
-    right: -14px;
+    right: -.5%;
 }
 
-.slider_list {
-    padding-top: 70px;
-    padding-left: 40px;
-    padding-right: 26px;
-    padding-bottom: 20px;
-    display: grid;
-    grid-auto-flow: column;
-    /* grid-auto-columns: calc(100% / 3); */
-    gap: 30px;
+.slider_background { 
+    margin-top: 70px;
+    max-width: 100%;
     overflow: hidden;
-    scroll-behavior: smooth;
-}
-
-.slider_item {
-    width: 400px;
-    height: 225px;
-    padding-top: 113px;
-    padding-left: 20px;
-    font-size: 18px;
-    letter-spacing: 0.18px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
-    background-size: 65px 79px;
-    background-position: 19px 22px;
-}
-
-.slider_item:nth-child(2) {
-    padding-right: 67px;
-    background-position: 20px 22px;
-}
-
-.slider_item:nth-child(3) {
-    padding-right: 21px;
-    background-position: 23px 22px;
+    width: 1307px;
+    height: 575.522px;
+    overflow: hidden;
 }
 
 /* rates */
@@ -162,6 +175,8 @@
 .rates_main {
     padding: 33px 0px 24px 30px;
     position: relative;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .rates_current {
@@ -231,7 +246,211 @@
     letter-spacing: 0.2px;
 }
 
+.rates_btn_signed {
+    background: #D2D2D2;
+    color: #000;
+}
+
 .rates_btn:hover,
 .hero_btn:hover {
     background-color: #3750ee;
+}
+
+.rates_btn_signed:hover {
+    background: rgba(185, 184, 184, 0.552);
+}
+
+@media screen and (max-width: 1400px) {
+    .rates_item {
+        width: 335px;
+    }
+
+    .rates_main {
+        padding-bottom: 31px;
+    }
+
+    .rates_item_header {
+        padding-left: 24px;
+    }
+
+    .rates_item_heading {
+        font-size: 20px;
+        letter-spacing: .2px;
+        font-weight: 600;
+    }
+
+    .rates_price_info {
+        width: 273px;
+    }
+
+    .rates_list_info_heading,
+    .rates_btn {
+        font-size: 18px;
+        letter-spacing: 0.18px;
+    }
+
+    .rates_list_info_item {
+        font-size: 16px;
+        letter-spacing: 0.16px;
+    }
+
+    .rates_list_info_heading {
+        margin-top: 37px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .heading {
+        font-size: 40px;
+    }
+    
+    .paragraph {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .main {
+        margin-bottom: 3px;
+    }
+
+    .rates_list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rates_item {
+        margin-bottom: 43px;
+    }
+    
+}
+
+@media screen and (max-width: 1100px) {
+    /* hero */
+    .hero_section {
+        height: fit-content;
+    }
+    .hero_background {
+        top: 10%;
+        max-width: 400px;
+        max-height: 390px;
+    } 
+
+    /* slider */
+
+    .slider_section {
+        margin-top: 55px;
+    }
+
+    .left_arrow {
+        left: -1.2%;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    /* hero */
+
+    .hero_section {
+        height: fit-content;
+        margin-top: 29px;
+    }
+
+    .heading,
+    .rates_heading,
+    .sub_heading {
+        font-size: 28px;
+        letter-spacing: 0.28px;
+    }
+
+    .sub_heading {
+        width: 274px;
+    }
+    
+    .paragraph {
+        margin-top: 19px;
+        width: 327px;
+        font-size: 18px;
+        letter-spacing: 0.18px;
+    }
+
+    .hero_background {
+        top: 10%;
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero_btn {
+        margin-top: 32px;
+        margin-bottom: 39px;
+        padding: 18px 72px 17px 74px;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+    }
+    
+    .slider_section {
+        margin-top: 55px;
+    }
+
+    .slider_item {
+        width: 298px;
+        height: 188px;
+        background-size: 57.8px 79px;
+    }
+
+    /* slider */
+
+    .slider_list {
+        padding-top: 32px;
+    }
+
+    .left_arrow {
+        left: -1.5%;
+    }
+
+    /* rates */
+
+    .rates_section {
+        margin-top: 80.4px;
+    }
+
+    .rates_list {
+        margin-top: 37px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .slider_background {
+        height: 395px;
+    }
+}
+
+@media screen and (max-width: 665px) {
+    /* hero */
+    .hero_btn {
+        width: 100%;
+    }
+
+    .hero_background {
+        position: static;
+        width: 347.182px;
+        height: 327.312px;
+    }
+    /* slider */
+
+    .right_arrow {
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .right_arrow {
+        right: -3.4%;
+    } 
+
+    .slider_background {
+        padding-right: -14px;
+        width: 361px;
+    }
 }

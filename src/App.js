@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom"
 import { useState } from "react";
 import AppMain from "./components/Main/AppMain";
@@ -9,7 +9,22 @@ import AppResults from "./components/Results/AppResults"
 export const MyContext = React.createContext();
 
 function App() {
-  const [signedIn, setSignedIn] = useState(true)
+  const [signedIn, setSignedIn] = useState(false)
+
+useEffect(() => {
+  let expirationTime
+  const currentTime = (new Date()).getTime();
+  if (localStorage.getItem('accessToken')) {
+    setSignedIn(true)
+    expirationTime = new Date(JSON.parse(localStorage.getItem('accessToken')).expire).getTime()
+    if (currentTime > expirationTime) {
+      setSignedIn(false)
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('histograms');
+      localStorage.removeItem('searchParams')
+    }
+  } 
+}, [])
 
   return (
     <>

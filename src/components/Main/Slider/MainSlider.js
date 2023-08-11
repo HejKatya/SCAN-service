@@ -1,9 +1,12 @@
-import React, {useRef} from 'react'
-import styles from '../Main.module.css'
+import React, {useRef, useState, useEffect} from 'react'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import styles from '../Main.module.css';
 
 const MainSlider = () => {
     const sliderRef = useRef()
     const itemRef = useRef()
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
     const sliderInfo = [
         {
@@ -31,44 +34,74 @@ const MainSlider = () => {
             imgUrl: '(/imgs/main/lock.svg)' 
         }
     ]
-    
-    const slideLeft = () => {
-        let gap = window.getComputedStyle(sliderRef.current).gap
-        gap = Number(gap.slice(0, gap.length - 2)) + 20
-        sliderRef.current.scrollLeft -= (itemRef.current.clientWidth + gap)
-    }
 
-    const slideRight = () => {
-        let gap = window.getComputedStyle(sliderRef.current).gap
-        gap = Number(gap.slice(0, gap.length - 2)) + 20
-        sliderRef.current.scrollLeft += (itemRef.current.clientWidth + gap)
-        console.log(itemRef.current.clientWidth + gap)
-    }
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 5
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1099 },
+          items: 3
+        },
+        tablet: {
+          breakpoint: { max: 1099, min: 670 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 670, min: 0 },
+          items: 1
+        }
+      };
+
+      const CustomLeftArrow = (arrowProps) => { 
+        const {carouselState, children, ...restArrowProps} = arrowProps;
+        return ( 
+        <button style={{backgroundImage: 'url(/imgs/main/left-arrow.svg)'}} className={styles.left_arrow} {...restArrowProps}></button> );
+     };
+
+     const CustomRightArrow = (arrowProps) => { 
+        const {carouselState, children, ...restArrowProps} = arrowProps;
+        return ( 
+        <button style={{backgroundImage: 'url(/imgs/main/right-arrow.svg)'}} className={styles.right_arrow} {...restArrowProps}></button> );
+     };
+
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWindowWidth(window.innerWidth)
+        } 
+        window.addEventListener('resize', handleWindowResize)
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize)
+        }
+    }, [])
 
     return (
-          <section className={styles.slider_section} style={{
-            backgroundImage: "url(/imgs/main/slider-banner.svg)"
-          }}>
+          <section className={styles.slider_section}>
             <h2 className={styles.sub_heading}>Почему именно мы</h2>
             <div className={styles.slider}>
-                <div onClick={slideLeft} className={styles.left_arrow} style={{
-                        backgroundImage: 'url(/imgs/main/left-arrow.svg)'
-                    }}></div>
-                <ul ref={sliderRef} className={styles.slider_list}>
+                <Carousel responsive={responsive}
+                 className={styles.slider_list}
+                 customLeftArrow={<CustomLeftArrow></CustomLeftArrow>}
+                 customRightArrow={<CustomRightArrow></CustomRightArrow>}>
                     {sliderInfo.map(item => {
                         return (
-                            <li key={sliderInfo.indexOf(item)} ref={itemRef} className={styles.slider_item} style={{
+                            <div key={sliderInfo.indexOf(item)} ref={itemRef} className={styles.slider_item} style={{
                                 backgroundImage: `url${item.imgUrl}`
                             }}>
                             {item.text}
-                            </li>
+                            </div>
                         )
                     })}
-                </ul>
-                <div onClick={slideRight} className={styles.right_arrow} style={{
-                        backgroundImage: 'url(/imgs/main/right-arrow.svg)'
-                    }}></div>
+                </Carousel>
             </div>
+            <div className={styles.slider_background} style={windowWidth > 800 ? {
+            backgroundImage: "url(/imgs/main/slider-banner.svg)"
+          } : {
+            backgroundImage: "url(/imgs/main/slider-mobile.svg)"
+          }}></div>
           </section> 
     )
 }
