@@ -51,7 +51,8 @@ const AppHeader = () => {
       }
 
     useEffect(() => {
-        if (localStorage.getItem('accessToken'))  {
+        if (!localStorage.getItem('accessToken')) return 
+        else {
             setData()
         }
     }, [])
