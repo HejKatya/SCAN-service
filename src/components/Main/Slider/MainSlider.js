@@ -82,7 +82,8 @@ const MainSlider = () => {
           <section className={styles.slider_section}>
             <h2 className={styles.sub_heading}>Почему именно мы</h2>
             <div className={styles.slider}>
-                <Carousel responsive={responsive}
+                <Carousel infiniteLoop={true}
+                 responsive={responsive}
                  className={styles.slider_list}
                  customLeftArrow={<CustomLeftArrow></CustomLeftArrow>}
                  customRightArrow={<CustomRightArrow></CustomRightArrow>}>

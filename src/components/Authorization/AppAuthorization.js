@@ -47,7 +47,7 @@ const AppAuthorization = () => {
     if (error) {
       setError(false)
     }
-  }, [password])
+  }, [password, login])
 
   const myRequest = async (e) => {
     const result = await axios.post('https://gateway.scan-interfax.ru/api/v1/account/login', {
@@ -106,7 +106,7 @@ const AppAuthorization = () => {
           <input className={styles.input} type="text" name='login' id='login' onInput={e => {
                             setLogin(e.target.value)
                         }}
-                        style={login && !verifyLog ? { 
+                        style={login && !verifyLog || error ? { 
                           border: '1px solid #FF5959',
                           boxShadow: '0px 0px 20px 0px rgba(255, 89, 89, 0.20)',
                           color: '#FF5959'
@@ -122,8 +122,8 @@ const AppAuthorization = () => {
                           color: '#FF5959'
                         } 
                         : {}}/>
-          <div className={styles.password_error} style={error ? {display: 'block'} : {}}>Неправильный пароль</div>            
-          <button type='button' onClick={setData} className={styles.btn} disabled={!verifyLog || !verifyPass}>Войти</button>
+          <div className={styles.password_error} style={error ? {display: 'block'} : {}}>Неправильный пароль или логин</div>            
+          <button type='button' onClick={setData} className={styles.btn} disabled={!verifyLog || !verifyPass || error}>Войти</button>
           <a className={styles.link_password} href=" ">Восстановить пароль</a>
           <p className={styles.text}>Войти через:</p>
           <div className={styles.btns}>

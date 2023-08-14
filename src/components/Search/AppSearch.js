@@ -10,14 +10,12 @@ import { setDocuments } from '../../slices/documentsSlice';
 import { useState } from 'react';
 import AppHeader from '../Header/AppHeader';
 import AppFooter from '../Footer/AppFooter';
-import { MyContext } from "../../App";
 import styles from './Search.module.css';
 
 const AppSearch = () => {
   const [popupActive, setPopupActive] = useState(false)
   const [popupChild, setPopupChild] = useState()
   const navigate = useNavigate()
-  const [emptyResponse, setEmptyResponse] = useState(false)
   const [focus, setFocus] = useState(false)
   const [fullness, setFullness] = useState(false)
   const [buisness, setBuisness] = useState(false)
@@ -228,10 +226,9 @@ const AppSearch = () => {
     let totalAmount = 0
     let riskAmount = 0
     if (result.data) {
-      if (result.data.data.length === 0) {
-        setEmptyResponse(true)
+      if (result.data.data.length === 0) { 
+        responseData = {}
       } else {
-        setEmptyResponse(false)
         result.data.data[0].data.map(item => {
           total.push(item)
           totalAmount += item.value
@@ -254,14 +251,14 @@ const AppSearch = () => {
 
   const setData = async () => {
     let result = await myRequest()
-    if (!result || emptyResponse) {
+    if (!result || Object.keys(result).length === 0) {
       setPopupActive(true)
       if (!result) {
         setPopupChild('Введен неверный ИНН')
-      } else if (emptyResponse) {
+      } else if (Object.keys(result).length === 0) {
         setPopupChild('По вашему запросу статей не найдено. Попробуйте ещё раз.')
       }
-    } else {
+    } else if (Object.keys(result).length > 0) {
       dispatch(setHistograms(result))
       navigate('/results')  
     }  

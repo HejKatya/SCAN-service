@@ -100,6 +100,7 @@
     font-size: 22px;
     font-weight: 500;
     letter-spacing: 0.44px;
+    cursor: pointer;
 }
 
 .btn:disabled {
@@ -155,7 +156,7 @@
 
 .password_error {
     top: 274px;
-    left: 136px; 
+    left: 100px; 
 }
 
 @media screen and (max-width: 1420px) {
@@ -246,7 +247,7 @@
     }
 
     .password_error {
-        left: 100px;
+        left: 60px;
         top: 269px;
     }
 
