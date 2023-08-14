@@ -5,8 +5,6 @@ import AppFooter from "../Footer/AppFooter";
 import MainHero from "./Hero/MainHero";
 import MainSlider from "./Slider/MainSlider";
 import MainRates from "./Rates/MainRates";
-import AppAuthorization from "../Authorization/AppAuthorization";
-import { useState } from 'react';
 
 
 const AppMain = () => {

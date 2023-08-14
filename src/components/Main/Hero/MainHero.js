@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { MyContext } from "../../../App";
 import styles from '../Main.module.css'
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const MainHero = () => {
     const [signedIn, setSignedIn] = useContext(MyContext);

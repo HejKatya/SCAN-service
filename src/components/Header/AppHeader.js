@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { setCompanyLimit } from "../../slices/companyLimitSlice";
 import { setAccessToken } from '../../slices/accessTokenSlice';
-import { Link, useFetcher, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../App";
 import styles from './Header.module.css';
 import axios from "axios";

@@ -1,11 +1,9 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styles from '../Main.module.css';
 
 const MainSlider = () => {
-    const sliderRef = useRef()
-    const itemRef = useRef()
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
     const sliderInfo = [
@@ -89,7 +87,7 @@ const MainSlider = () => {
                  customRightArrow={<CustomRightArrow></CustomRightArrow>}>
                     {sliderInfo.map(item => {
                         return (
-                            <div key={sliderInfo.indexOf(item)} ref={itemRef} className={styles.slider_item} style={{
+                            <div key={sliderInfo.indexOf(item)} className={styles.slider_item} style={{
                                 backgroundImage: `url${item.imgUrl}`
                             }}>
                             {item.text}

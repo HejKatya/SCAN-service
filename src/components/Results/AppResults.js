@@ -24,7 +24,6 @@ const AppResults = () => {
   const sliderRef = useRef()
   const itemRef = useRef()
   const mobileRef = useRef()
-  const itemWidth = itemRef.clientWidth
   const dispatch = useDispatch();
 
   const histograms = useSelector((state) => state.histograms.value);
